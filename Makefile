@@ -19,7 +19,7 @@ docker-down-clear:
 docker-build:
 	docker-compose build
 
-app-init: app-composer-install app-wait-db app-migrations app-db-seed perm
+app-init: app-composer-install app-wait-db app-migrations app-db-seed app-key-generate
 
 assets-init: assets-install assets-dev
 
