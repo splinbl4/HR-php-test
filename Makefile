@@ -33,3 +33,6 @@ app-migrations:
 
 app-db-seed:
 	docker-compose run --rm php-cli php artisan db:seed
+
+queue:
+	docker-compose run --rm php-cli php artisan queue:work
