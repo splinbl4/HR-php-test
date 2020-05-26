@@ -1,9 +1,11 @@
 <?php
 
+use App\Module\Vendor\Entity\Vendor;
 use Illuminate\Database\Seeder;
 
-use App\Vendor;
-
+/**
+ * Class VendorsTableSeeder
+ */
 class VendorsTableSeeder extends Seeder
 {
     /**

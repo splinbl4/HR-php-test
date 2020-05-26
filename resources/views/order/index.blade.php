@@ -12,7 +12,7 @@
         </li>
         <li>
             <a href="{{ route('orders.index', ['type' => 'current', 'sort' => 'delivery_dt', 'direction' => 'asc']) }}"
-               class="nav-link @if(Request::get('type') === 'current') active @endif">
+               class="nav-link @if(Request::get('type') === 'current' || empty(Request::get('type'))) active @endif">
                 Current
             </a>
         </li>

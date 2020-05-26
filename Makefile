@@ -1,6 +1,8 @@
 init: docker-down-clear \
 	 docker-build docker-up \
-	 app-init
+	 app-init \
+	 assets-init \
+	 queue
 up: docker-up
 down: docker-down
 restart: down up
@@ -17,7 +19,9 @@ docker-down-clear:
 docker-build:
 	docker-compose build
 
-app-init: app-composer-install app-wait-db app-migrations app-db-seed
+app-init: app-composer-install app-key-generate app-wait-db app-migrations app-db-seed
+
+assets-init: assets-install assets-dev
 
 app-composer-install:
 	docker-compose run --rm php-cli composer install
@@ -36,3 +40,12 @@ app-db-seed:
 
 queue:
 	docker-compose run --rm php-cli php artisan queue:work
+
+assets-install:
+	docker-compose run --rm node yarn install
+
+assets-dev:
+	docker-compose run --rm node yarn run dev
+
+assets-watch:
+	docker-compose run --rm node yarn run watch

@@ -1,7 +1,11 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class OrdersTableSeeder
+ */
 class OrdersTableSeeder extends Seeder
 {
     /**
@@ -17,7 +21,7 @@ class OrdersTableSeeder extends Seeder
         $status = [0, 10, 20];
 
         for ($i = 0; $i < $limit; $i++) {
-            $createdAt = \Carbon\Carbon::now()->subDays(rand(0, 4));
+            $createdAt = Carbon::now()->subDays(rand(0, 4));
             \DB::table('orders')->insert([				
 				'status' => $status[rand(0,2)],
 				'client_email' => $faker->email,

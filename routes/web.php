@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('orders.index');
 });
 
 Route::get('/weather', 'Weather\WeatherController@index')->name('weather.index');

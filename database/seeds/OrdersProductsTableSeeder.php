@@ -1,9 +1,12 @@
 <?php
 
+use App\Module\Order\Entity\Order;
+use App\Module\Product\Entity\Product;
 use Illuminate\Database\Seeder;
-use App\Product;
-use App\Order;
 
+/**
+ * Class OrdersProductsTableSeeder
+ */
 class OrdersProductsTableSeeder extends Seeder
 {
     /**
