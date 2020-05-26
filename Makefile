@@ -1,8 +1,7 @@
 init: docker-down-clear \
 	 docker-build docker-up \
 	 app-init \
-	 assets-init \
-	 queue
+	 assets-init
 up: docker-up
 down: docker-down
 restart: down up

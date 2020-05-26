@@ -3,6 +3,7 @@
 - настроить `.env` файл
 - `make init`
 - `make perm`
+- `make queue`
 
 Все необходимые команды прописаны в файле `Makefile`
 
