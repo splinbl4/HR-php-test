@@ -19,7 +19,7 @@ docker-down-clear:
 docker-build:
 	docker-compose build
 
-app-init: app-composer-install app-key-generate app-wait-db app-migrations app-db-seed
+app-init: app-composer-install app-wait-db app-migrations app-db-seed perm
 
 assets-init: assets-install assets-dev
 
@@ -49,3 +49,7 @@ assets-dev:
 
 assets-watch:
 	docker-compose run --rm node yarn run watch
+
+perm:
+	sudo chmod -R 777 storage bootstrap/cache
+	sudo chmod -R 777 storage storage/logs
